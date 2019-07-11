@@ -20,6 +20,13 @@
     --line: 1px solid var(--color-grey-light-2);
 }
 
+//Can't use CSS custom properties inside of media queries
+$bp-largest: 75em;      //1200px / 16
+$bp-large: 68.75em;     //1100px / 16
+$bp-medium: 56.25em;    //900px ...
+$bp-small: 37.5em;      //600px
+$bp-smallest: 31.25em    //500px
+
 * {
     margin: 0;
     padding: 0;
@@ -34,6 +41,10 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;   //1rem = 10px
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%; //1rem = 8px
+    }
 }
 
 body {
